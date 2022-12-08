@@ -1,0 +1,18 @@
+train: ./TACO/images/train  # train images (relative to path)
+val: ./TACO/images/val  # val images (relative to path)
+test:  ./TACO/images/test # test images (optional)
+
+nc: 60 # number of classes
+
+names: ["aluminium foil", "battery", "aluminium blister pack", "carded blister pack", "other plastic bottle", 
+        "clear plastic bottle", "glass bottle", "plastic bottle cap", "metal bottle cap", "broken glass", 
+        "food can", "aerosol", "drink can", "toilet tube", "other carton",
+        "egg carton", "drink carton", "corrugated carton", "meal carton", "pizza box",
+        "paper cup", "disposable plastic cup", "foam cup", "glass cup", "other plastic cup",
+        "food waste", "glass jar", "plastic lid", "metal lid", "other plastic",
+        "magazine paper", "tissues", "wrapping paper", "normal paper", "paper bag",
+        "plastified paper bag", "plastic film", "six pack rings", "garbage bag", "other plastic wrapper",
+        "single-use carrier bag", "polypropylene bag", "crisp packet", "spread tub", "tupperware",
+        "disposable food container", "foam food container", "other plastic container", "plastic glooves", "plastic utensils",
+        "pop tab", "rope & strings", "scrap metal", "shoe", "squeezable tube",
+        "plastic straw", "paper straw", "styrofoam piece", "unlabeled litter", "cigarette"]
