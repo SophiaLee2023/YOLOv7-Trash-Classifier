@@ -15,7 +15,6 @@ def install_requirements(GPU_integration: bool = False) -> None:
             "pip uninstall torch", # remove torch-1.13.0+cpu (default installation is CPU only)
             "pip3 install torch==1.13.0+cu117 torchvision==0.14.0+cu117 torchaudio===0.13.0+cu117 -f https://download.pytorch.org/whl/cu117/torch_stable.html",
         ])
-
 # install_requirements(True)
 
 print(f"PyTorch: {torch.__version__}\t TorchVision: {torchvision.__version__}\t TorchAudio: {torchaudio.__version__}\n" +\
@@ -24,13 +23,8 @@ print(f"PyTorch: {torch.__version__}\t TorchVision: {torchvision.__version__}\t 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 torch.cuda.empty_cache()
 
-# run_in_terminal([ # coco 128 model
-#     f"python train.py --epochs 10 --data data/coco.yaml --cfg cfg/training/yolov7.yaml --weights weights/yolov7.pt --name coco_classifier",
-#     f"python detect.py --img 1280 --weights runs/train/coco_classifier/weights/best.pt --source 0 --name webcam_recording"
-# ])
-
 run_in_terminal([ # custom TACO-based model
-    f"python train.py --epochs 100 --data data/TACO.yaml --cfg cfg/training/yolov7_nc60.yaml --weights weights/yolov7.pt --name trash_classifier --cache-images",
-    f"python detect.py --img 1280 --weights runs/train/trash_classifier/weights/best.pt --source TACO/images/test --conf 0.1 --name trash_classifier"
+    "python train.py --workers 8 --device 0 --epochs 100 --data data/TACO.yaml --cfg cfg/training/yolov7-tiny_nc60.yaml --weights " " --name trash_classifier --cache-images",
+    "python detect.py --img 1280 --weights runs/train/trash_classifier/weights/best.pt --source TACO/images/test --conf 0.1 --name trash_classifier"
     # f"python detect.py --img 1280 --weights runs/train/trash_classifier/weights/best.pt --source 0 --conf 0.1 --name webcam_recording"
 ])
