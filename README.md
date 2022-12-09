@@ -25,4 +25,4 @@ python detect.py --img 1280 --weights runs/train/trash_classifier/weights/best.p
 python detect.py --img 1280 --weights runs/train/trash_classifier/weights/best.pt --source 0 --conf 0.1 --name webcam_recording
 ```
 
-If using pre-trained weights, switch "runs/train/trash_classifier/weights/best.pt" to the weight file path
+If using pre-trained weights, change the file path after "--weights to the location of the weights.pt file.
